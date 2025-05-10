@@ -6,12 +6,6 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 import nltk
 import textstat
 
-# Optional: use rich for pretty output
-try:
-    from rich import print
-except ImportError:
-    pass
-
 nltk.download("punkt")
 nltk.download("stopwords")
 
@@ -22,7 +16,7 @@ STOPWORDS = set(stopwords.words("english"))
 
 def load_file(filepath):
     if not os.path.exists(filepath):
-        print(f"[red]File not found:[/red] {filepath}")
+        print(f"File not found: {filepath}")
         sys.exit(1)
     with open(filepath, "r", encoding="utf-8") as f:
         return f.read()
@@ -56,24 +50,38 @@ def analyze_resume(resume_path, job_path):
     resume_tokens = clean_text(resume_text)
     job_tokens = clean_text(job_text)
 
-    print(f"[bold cyan]--- Resume Analysis ---[/bold cyan]")
+    output_lines = []
 
-    print(f"\n[bold]Readability Score:[/bold] {textstat.flesch_reading_ease(resume_text):.2f}")
+    output_lines.append("--- Resume Analysis ---\n")
 
-    print("\n[bold]Top Resume Keywords:[/bold]")
+    readability = textstat.flesch_reading_ease(resume_text)
+    output_lines.append(f"Readability Score: {readability:.2f}\n")
+
+    output_lines.append("Top Resume Keywords:")
     for word, count in get_top_keywords(resume_tokens):
-        print(f" - {word}: {count} times")
+        output_lines.append(f" - {word}: {count} times")
 
-    print("\n[bold]Similarity to Job Description (TF-IDF):[/bold]")
-    print(f" {compute_tfidf_similarity(resume_text, job_text) * 100:.2f}%")
+    similarity = compute_tfidf_similarity(resume_text, job_text)
+    output_lines.append(f"\nSimilarity to Job Description (TF-IDF): {similarity * 100:.2f}%\n")
 
-    print("\n[bold yellow]Missing Important Keywords from Job Description:[/bold yellow]")
+    output_lines.append("Missing Important Keywords from Job Description:")
     missing = missing_keywords(resume_tokens, job_tokens)
     if missing:
         for word in missing:
-            print(f" - {word}")
+            output_lines.append(f" - {word}")
     else:
-        print(" ✅ No major keywords missing!")
+        output_lines.append(" ✅ No major keywords missing!")
+
+    # Create results directory
+    os.makedirs("results", exist_ok=True)
+
+    # Write output to file
+    resume_name = os.path.basename(resume_path).replace(".txt", "")
+    output_path = os.path.join("results", f"resume_analysis_{resume_name}.txt")
+    with open(output_path, "w", encoding="utf-8") as f:
+        f.write("\n".join(output_lines))
+
+    print(f"\n✅ Analysis complete! Results saved to: {output_path}")
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
