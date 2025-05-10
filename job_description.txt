@@ -1,0 +1,1 @@
+We are seeking a data analyst proficient in Python, SQL, and data visualization tools like Tableau or Power BI. The ideal candidate will have experience with data pipelines, statistical analysis, and working in collaborative environments. Knowledge of APIs, dashboards, and automation is a plus.
