@@ -1,0 +1,1 @@
+John Doe is a data analyst with experience in Python, SQL, and Tableau. He has worked on data cleaning, visualization, and reporting tasks. John is familiar with Excel and Google Sheets, and has collaborated with cross-functional teams to deliver business insights. He's also comfortable working with APIs and writing automation scripts.
