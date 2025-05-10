@@ -2,19 +2,26 @@
 
 ## ✅ What It Does
 Takes in two .txt files: resume and job description
+
 - Cleans and tokenizes text
+  
 - Shows keyword overlap between resume and job
+  
 - Displays top keywords in the resume
+  
 - Calculates readability (Flesch Reading Ease)
+  
 - Suggests missing job-related keywords
 
 ## 📦 Installation & Usage
 
 1. **Install dependencies**
+
 Run the command
-`pip install nltk scikit-learn textstat rich`
+```pip install nltk scikit-learn textstat rich```
 
 2. **Set up Resume & Job Description**
+
 Set up the Resume and Job Description for the code to analyze
 Example of your_resume.txt:
 ```
@@ -26,10 +33,11 @@ We are seeking a data analyst proficient in Python, SQL, and data visualization 
 ```
 
 3. **Run the file**
-Run this command in Command Prompt
-`python main.py your_resume.txt job_description.txt`
 
-You're done!
+Run this command in Command Prompt
+```python main.py your_resume.txt job_description.txt```
+
+You're done! The result will be generated under the 'results' sub-folder!
 
 ## Example & Result
 Example of your_resume.txt:
