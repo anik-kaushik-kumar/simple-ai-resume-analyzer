@@ -1,0 +1,25 @@
+--- Resume Analysis ---
+
+Readability Score: 63.20
+
+Top Resume Keywords:
+ - data: 3 times
+ - python: 1 times
+ - sql: 1 times
+ - tableau: 1 times
+ - analysis: 1 times
+ - reporting: 1 times
+ - visualization: 1 times
+ - teams: 1 times
+ - collaboration: 1 times
+ - automation: 1 times
+
+Similarity to Job Description (TF-IDF):
+ 81.45%
+
+Missing Important Keywords from Job Description:
+ - pipelines
+ - dashboards
+ - statistical
+ - collaborative
+ - power
