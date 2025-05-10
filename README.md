@@ -18,7 +18,11 @@ Takes in two .txt files: resume and job description
 1. **Install dependencies**
 
 Run the command
-```pip install nltk scikit-learn textstat rich```
+```
+pip install nltk scikit-learn textstat rich
+```
+
+
 
 2. **Set up Resume & Job Description**
 
@@ -32,10 +36,14 @@ Example of job_description.txt:
 We are seeking a data analyst proficient in Python, SQL, and data visualization tools like Tableau or Power BI. The ideal candidate will have experience with data pipelines, statistical analysis, and working in collaborative environments. Knowledge of APIs, dashboards, and automation is a plus.
 ```
 
+
+
 3. **Run the file**
 
 Run this command in Command Prompt
-```python main.py your_resume.txt job_description.txt```
+```
+python main.py your_resume.txt job_description.txt
+```
 
 You're done! The result will be generated under the 'results' sub-folder!
 
@@ -49,7 +57,9 @@ Example of job_description.txt:
 We are seeking a data analyst proficient in Python, SQL, and data visualization tools like Tableau or Power BI. The ideal candidate will have experience with data pipelines, statistical analysis, and working in collaborative environments. Knowledge of APIs, dashboards, and automation is a plus.
 ```
 
-Example of Final Result:
+
+
+## Example of Final Result:
 ```
 --- Resume Analysis ---
 
