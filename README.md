@@ -1,4 +1,4 @@
-# Simple AI Resume Analyzer
+# Simple, Lightweight AI Resume Analyzer
 
 ## ✅ What It Does
 Takes in two .txt files: resume and job description
